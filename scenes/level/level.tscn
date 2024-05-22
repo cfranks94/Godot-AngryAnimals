@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqwywft5wx5jl"]
+
+[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_7sstk"]
+[ext_resource type="Texture2D" uid="uid://spu8o1qq1aa6" path="res://assets/scene/colored_castle.png" id="1_76jng"]
+[ext_resource type="PackedScene" uid="uid://vyty6mp0x17" path="res://scenes/water/water.tscn" id="2_jdwld"]
+[ext_resource type="PackedScene" uid="uid://crgsk74hl5fdu" path="res://scenes/cup/cup.tscn" id="4_jnws4"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_7sstk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(583, 330)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_76jng")
+
+[node name="AnimalStart" type="Marker2D" parent="."]
+position = Vector2(123, 333)
+
+[node name="Water" parent="." instance=ExtResource("2_jdwld")]
+z_index = 1
+position = Vector2(-4, 587)
+
+[node name="Cup" parent="." instance=ExtResource("4_jnws4")]
+position = Vector2(456, 446)
